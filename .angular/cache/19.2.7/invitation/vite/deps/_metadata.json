@@ -1,34 +1,67 @@
 {
-  "hash": "5a124ecc",
-  "configHash": "5e5724c7",
-  "lockfileHash": "3e43a9ba",
-  "browserHash": "b09fc451",
+  "hash": "28d0c9e3",
+  "configHash": "b98f5c1a",
+  "lockfileHash": "174a637c",
+  "browserHash": "d0785c55",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "5ced7554",
+      "fileHash": "2f13e42d",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "d5267238",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "673ba2e9",
+      "fileHash": "5ab918bc",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "b5b792ac",
+      "fileHash": "4d55c414",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../../../../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "2b9e4348",
+      "needsInterop": false
+    },
+    "firebase/firestore": {
+      "src": "../../../../../../node_modules/firebase/firestore/dist/esm/index.esm.js",
+      "file": "firebase_firestore.js",
+      "fileHash": "e69e260f",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "e9b0d9ee",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-CEFKC6BW": {
-      "file": "chunk-CEFKC6BW.js"
+    "chunk-TDLCNGXA": {
+      "file": "chunk-TDLCNGXA.js"
     },
-    "chunk-IWJZX5M4": {
-      "file": "chunk-IWJZX5M4.js"
+    "chunk-G2SRIZDJ": {
+      "file": "chunk-G2SRIZDJ.js"
+    },
+    "chunk-FFSQOVR4": {
+      "file": "chunk-FFSQOVR4.js"
+    },
+    "chunk-ISIKKY7Y": {
+      "file": "chunk-ISIKKY7Y.js"
+    },
+    "chunk-5K356HEJ": {
+      "file": "chunk-5K356HEJ.js"
     }
   }
 }
