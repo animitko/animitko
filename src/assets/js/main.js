@@ -281,12 +281,12 @@
         minute = second * 60,
         hour = minute * 60,
         day = hour * 24;
-  let birthday = "Dec 15, 2025 00:00:00",
+  let birthday = "Jun 15, 2025 18:30:00",
       countDown = new Date(birthday).getTime(),
       x = setInterval(function() {    
         let now = new Date().getTime(),
             distance = countDown - now;
-        return;
+
         document.getElementById("days").innerText = Math.floor(distance / (day)),
           document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
           document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
