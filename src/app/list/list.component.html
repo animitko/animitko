@@ -1,43 +1,45 @@
-<div class="container"> 
+<div class="container-fluid">
   <div class="row m-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Име</th>
-          <th scope="col">Присъствие</th>
-          <th scope="col">Брой гости</th>
-          <th scope="col">Транспорт</th>
-          <th scope="col">Меню</th>
-          <th scope="col">Коментар</th>
-          <th scope="col">Действие</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of allUsers; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ user.name || '-' }}</td>
-          <td>
-            <!-- Attendance icon: check for yes, X for no -->
-            <span *ngIf="user.attendance === 'yes'">
-              <i class="fas fa-check-circle" style="color: green; font-size: 20px;"></i>
-            </span>
-            <span *ngIf="user.attendance === 'no'">
-              <i class="fas fa-times-circle" style="color: red; font-size: 20px;"></i>
-            </span>
-            <span *ngIf="user.attendance === null">-</span>
-          </td>
-          <td>{{ user.guests || '-' }}</td>
-          <td>{{ user.transport || '-' }}</td>
-          <td>{{ user.menu || '-' }}</td>
-          <td>{{ user.message || '-' }}</td>
-          <td>
-            <button class="btn btn-primary" style="padding: 5px; margin: 0px" (click)="copyInvitationLink(user.id)">
-              Копирай покана
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Име</th>
+            <th scope="col">Присъствие</th>
+            <th scope="col">Брой гости</th>
+            <th scope="col">Транспорт</th>
+            <th scope="col">Меню</th>
+            <th scope="col">Коментар</th>
+            <th scope="col">Действие</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allUsers; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ user.name || '-' }}</td>
+            <td>
+              <!-- Attendance icon: check for yes, X for no -->
+              <span *ngIf="user.attendance === 'yes'">
+                <i class="fas fa-check-circle" style="color: green; font-size: 20px;"></i>
+              </span>
+              <span *ngIf="user.attendance === 'no'">
+                <i class="fas fa-times-circle" style="color: red; font-size: 20px;"></i>
+              </span>
+              <span *ngIf="user.attendance === null">-</span>
+            </td>
+            <td>{{ user.guests || '-' }}</td>
+            <td>{{ user.transport || '-' }}</td>
+            <td>{{ user.menu || '-' }}</td>
+            <td>{{ user.message || '-' }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm" style="padding: 5px; margin: 0px" (click)="copyInvitationLink(user.id)">
+                Копирай покана
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
