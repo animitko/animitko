@@ -21,11 +21,13 @@ export class InvitationComponent implements OnInit {
   public message: string = "";
   public user: any;
   ngOnInit() {
-    this.userId = this.route.snapshot.paramMap.get('id');
-
-    this.userService.getUserData(this.userId!).then((x)=>{
-      this.user = x;
+    this.route.queryParams.subscribe(params => {
+      this.userId  = params['userId'];
+      this.userService.getUserData(this.userId!).then((x)=>{
+        this.user = x;
+      });
     });
+  
   }
   constructor(private userService: UserService,private route: ActivatedRoute) {}
   
