@@ -1,5 +1,5 @@
 <header id="home" class="header valign bg-img parallaxie" style="position: relative; background-image: url('assets/images/slider.jpg'); background-size: cover; background-position: center center;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); z-index: 1;"></div>
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2;">
         <div class="row">
             <div class="col-md-12 text-center caption">
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-12 text-center animate-box" data-animate-effect="fadeInUp">
                 <span >ПОКАНАТА ВАЖИ ЗА</span>
-                <h3 class="oliven-couple-title">сем. Димитрови</h3>
+                <h3 class="oliven-couple-title">{{user?.name}}</h3>
                 <h4 style="font-size: 35px !important" class="oliven-couple-subtitle">С радост Ви каним да бъдете част от нашия специален ден!</h4>
                 <span>Моля да потвърдите присъствието си по-долу</span> 
             </div>
@@ -44,12 +44,10 @@
                     <div class="info valign">
                         <div class="full-width">
                             <h6>Ани Владимирова <i class="ti-heart"></i></h6> <span>Булката</span>
-                            <p>Може да добавим тест, може и да няма оставам на митко без за да видиш как е</p>
                             <div class="social">
                                 <div class="full-width">
-                                    <a href="#0" class="icon"> <i class="ti-facebook"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-twitter"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-instagram"></i> </a>
+                                    <a href="https://www.facebook.com/nasko.dril" class="icon"> <i class="ti-facebook"></i> </a>
+                                    <a href="https://www.instagram.com/anyvladimirova/" class="icon"> <i class="ti-instagram"></i> </a>
                                 </div>
                             </div>
                         </div>
@@ -64,9 +62,8 @@
                             <h6>Димитър Димитров<i class="ti-heart"></i></h6> <span>Младоженецът</span>
                             <div class="social">
                                 <div class="full-width">
-                                    <a href="#0" class="icon"> <i class="ti-facebook"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-twitter"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-instagram"></i> </a>
+                                    <a href="https://www.facebook.com/mitaka.dimitrov.5" class="icon"> <i class="ti-facebook"></i> </a>
+                                    <a href="https://www.instagram.com/idealdimitrow/" class="icon"> <i class="ti-instagram"></i> </a>
                                 </div>
                             </div>
                         </div>
@@ -132,12 +129,10 @@
                     <div class="info valign">
                         <div class="full-width">
                             <h6>Ивана Цанкова <i class="ti-heart"></i></h6> <span>Кумата</span>
-                            <p>Olivia fringilla dui at elit finibus viverra thenec a lacus seda themo the miss druane semper non the fermen.</p>
                             <div class="social">
                                 <div class="full-width">
-                                    <a href="#0" class="icon"> <i class="ti-facebook"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-twitter"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-instagram"></i> </a>
+                                    <a href="https://www.facebook.com/ivana.tsankova" class="icon"> <i class="ti-facebook"></i> </a>
+                                    <a href="https://www.instagram.com/ivanatsankova/" class="icon"> <i class="ti-instagram"></i> </a>
                                 </div>
                             </div>
                         </div>
@@ -150,12 +145,10 @@
                     <div class="info valign">
                         <div class="full-width">
                             <h6>Благовест Сербезов<i class="ti-heart"></i></h6> <span>Кумът</span>
-                            <p>Enrico fringilla dui at elit finibus viverra thenec a lacus seda themo the miss druane semper non the fermen.</p>
                             <div class="social">
                                 <div class="full-width">
-                                    <a href="#0" class="icon"> <i class="ti-facebook"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-twitter"></i> </a>
-                                    <a href="#0" class="icon"> <i class="ti-instagram"></i> </a>
+                                    <a href="https://www.facebook.com/blagovest.serbezov" class="icon"> <i class="ti-facebook"></i> </a>
+                                    <a href="https://www.instagram.com/blagovestserbezov" class="icon"> <i class="ti-instagram"></i> </a>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +161,7 @@
 </div>
 
 <!-- See you -->
-<div id="seeyou" class="seeyou section-padding bg-img bg-fixed" data-background="assets/images/banner-3.jpg">
+<div id="seeyou" class="seeyou section-padding bg-img bg-fixed"  data-background="assets/images/banner-3.jpg">
     <div class="container">
         <div class="row">
             <div class="section-head col-md-12 text-center"> 
@@ -235,7 +228,12 @@
 <!-- RSVP Section -->
 <div id="rsvp" class="section-padding bg-img bg-fixed" data-background="assets/images/banner-2.jpg">
     <div class="container">
-        <div class="row">
+        <div class="row" *ngIf="user?.attendance != null">
+            <div class="alert alert-success" role="alert">
+                Вече сте отговорили на поканата.<br>
+            </div>
+        </div>
+        <div class="row" *ngIf="user?.attendance == null">
             <div class="col-md-6 offset-md-3 bg-white p-40">
                 <span class="oliven-title-meta text-center">Потвърдете присъствието си!</span>
                 <h2 class="oliven-title text-center">Моля отбележете</h2>
@@ -245,7 +243,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                Вашето съобщение беше изпратено успешно.
+                                Вашият отговор беше успешно запазен.
                             </div>
                         </div>
                     </div>
@@ -265,13 +263,17 @@
                                 </div>
                             </div>
                         </div>
-                  
+                        
                         <div class="col-md-12">
                             <label style="font-weight: bold">2. Моля потвърдете колко души ще дойдете?</label> <br>
                             <div class="form-group">
-                                <input type="number" class="form-control" [(ngModel)]="guests" name="guests" value="2" required>
+                                <div class="form-check form-check-inline" *ngFor="let number of [1, 2, 3, 4, 5, 6]">
+                                    <input class="form-check-input" type="radio" name="guests" [(ngModel)]="guests" [value]="number" id="guest{{ number }}" required>
+                                    <label class="form-check-label" for="guest{{ number }}">{{ number }}</label> 
+                                </div>
                             </div>
                         </div>
+                        
                   
                         <div class="col-md-12">
                             <label style="font-weight: bold">3. Какъв транспорт ще използвате?</label> <br>
@@ -283,6 +285,7 @@
                                 <input class="form-check-input" type="radio" name="transport" [(ngModel)]="transport" value="provided" id="transportProvided">
                                 <label class="form-check-label" for="transportProvided">Организиран от нас</label>
                             </div>
+                            <span class="small">*Организираният транспорт ще тръгва от църквата <strong>"Света Богородица"</strong> в Пазарджик в <strong>16:30 ч.</strong> <br>Връщането ще бъде на два курса — първият в <strong>1:00 ч.</strong>, а вторият в <strong>3:00 ч.</strong></span>
                         </div>
                   
                         <div class="col-md-12">
@@ -296,23 +299,11 @@
                                 <label class="form-check-label" for="menuVegetarian">Вегетарианско</label>
                             </div>
                         </div>
-                  
-                        <div class="col-md-12">
-                            <label style="font-weight: bold">5. Имате осигурено настаняване в хотел, ще се възползвате ли?</label> <br>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="hotel" [(ngModel)]="hotel" value="yes" id="hotelYes">
-                                <label class="form-check-label" for="hotelYes">Да, ще остана/останем в хотела</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="hotel" [(ngModel)]="hotel" value="no" id="hotelNo">
-                                <label class="form-check-label" for="hotelNo">Не, няма да останем в хотела</label>
-                            </div>
-                        </div>
-                  
+                            
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label style="font-weight: bold">6. Допълнителен коментар?</label> <br>
-                                <textarea [(ngModel)]="message" class="form-control" name="message" placeholder="Коментар"></textarea>
+                                <textarea style="color: black; background: #DCDCDC" [(ngModel)]="message" class="form-control" name="message" placeholder="Коментар"></textarea>
                             </div>
                         </div>
                   
