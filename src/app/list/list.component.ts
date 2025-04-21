@@ -1,31 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { UserService } from '../userservice.service';
-import { CommonModule } from '@angular/common'; // ✅ Import this
+import { CommonModule, isPlatformBrowser } from '@angular/common'; // ✅ Import this
 
 @Component({
   selector: 'app-list',
-  imports: [CommonModule], // ✅ Add CommonModule here
+  imports: [CommonModule],
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'] // fixed property name: "styleUrl" → "styleUrls"
+  styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  allUsers: any[] = [];
 
-  allUsers: any[] = []; // This array will hold all user data
-
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
-    this.userService.getAllUsers().then(users => {
-      this.allUsers = users;
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.userService.getAllUsers().then(users => {
+        this.allUsers = users;
+      });
+    } else {
+      console.log('Skipping user fetch on server (SSR)');
+    }
   }
+
   copyInvitationLink(userId: string): void {
-    const url = `${window.location.origin}/invitation/${userId}`;
+    const url = `${window.location.origin}/invitation?userId=${encodeURIComponent(userId)}`;
     navigator.clipboard.writeText(url).then(() => {
       alert('Поканата е копирана успешно!');
     }).catch(err => {
       console.error('Грешка при копиране:', err);
     });
   }
-  
 }
