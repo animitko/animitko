@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, setDoc, getDoc, Firestore } from 'firebase/firestore';
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  getDocs,
+  collection,
+  Firestore
+} from 'firebase/firestore';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDZFbj1pkOp-F6JmJAgK5PtCXJRXmlU7dM",
   authDomain: "wedding-693e1.firebaseapp.com",
@@ -25,6 +34,15 @@ export class UserService {
   async saveUserData(userId: string, userData: any): Promise<void> {
     const userDoc = doc(this.firestore, 'users', userId);
     await setDoc(userDoc, userData);
+  }
+  async getAllUsers(): Promise<any[]> {
+    const usersCollection = collection(this.firestore, 'users');
+    const snapshot = await getDocs(usersCollection);
+    const users: any[] = [];
+    snapshot.forEach(doc => {
+      users.push({ id: doc.id, ...doc.data() });
+    });
+    return users;
   }
 
   // Get user data from Firestore
