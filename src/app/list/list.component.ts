@@ -28,10 +28,20 @@ export class ListComponent implements OnInit {
 
   copyInvitationLink(userId: string): void {
     const url = `${window.location.origin}/invitation?userId=${encodeURIComponent(userId)}`;
-    navigator.clipboard.writeText(url).then(() => {
-      alert('Поканата е копирана успешно!');
-    }).catch(err => {
-      console.error('Грешка при копиране:', err);
-    });
+    const message = `Здравейте! Изпращам ви поканата за нашата сватба на 15 юни (петък).
+  Официалната покана ще намерите на следния линк:
+  ${url}
+  
+  Моля да потвърдите присъствието си!`;
+  
+    navigator.clipboard.writeText(message)
+      .then(() => {
+        alert('Поканата е копирана успешно!');
+      })
+      .catch((err) => {
+        console.error('Грешка при копиране на поканата:', err);
+        alert('Възникна грешка при копиране.');
+      });
   }
+  
 }
