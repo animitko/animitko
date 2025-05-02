@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
   Официалната покана ще намерите на следния линк:
   ${url}
   
-  Моля да потвърдите присъствието си!`;
+  Моля да потвърдите присъствието си до 20.05.25!`;
   
     navigator.clipboard.writeText(message)
       .then(() => {

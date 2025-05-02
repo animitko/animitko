@@ -3,7 +3,7 @@
     <div class="container" style="position: relative; z-index: 2;">
         <div class="row">
             <div class="col-md-12 text-center caption">
-                <h1 class="animate-box" data-animate-effect="fadeInUp">ПОКАНА</h1>
+                <h1 class="animate-box" data-animate-effect="fadeInUp" style="padding-bottom: 300px">ПОКАНА</h1>
                 <h1 class="animate-box" data-animate-effect="fadeInUp">Ани & Димтър</h1>
                 <h5 class="animate-box" data-animate-effect="fadeInUp">15 ЮНИ, 2025 – Вила Юстина</h5>
             </div>
@@ -106,11 +106,15 @@
             <div class="col-md-7 animate-box" data-animate-effect="fadeInRight">
                 <h4 class="oliven-story-subtitle">Our love.</h4>
                 <h3 class="oliven-story-title">Нашата история</h3>
-                <p>Curabit aliquet orci elit genes tristique lorem commodo vitae. Tuliaum tincidunt nete sede gravida aliquam, neque libero hendrerit magna, sit amet mollis lacus ithe maurise. Dunya erat volutpat edat themo the druanye semper.</p>
-                <p>Luality fringilla duiman at elit vinibus viverra nec a lacus themo the druanye sene sollicitudin mi suscipit non sagie the fermen.</p>
-                <p>Phasellus viverra tristique justo duis vitae diam neque nivamus ac est augue artine aringilla dui at elit finibus viverra nec a lacus. Nedana themo eros odio semper soe suscipit non. Curabit aliquet orci elit genes tristique.</p>
-                <h4>10 дек. 2024, Тя каза ДА!</h4>
-                <p>Luality fringilla duiman at elit finibus viverra nec a lacus themo the druanye sene sollicitudin mi suscipit non sagie the fermen.</p>
+<p>Любов от пръв поглед ли за него бе, от мига в който тя вече не беше дете. Той преследваше я с огън в очите, а дълбоко в нея се запалиха искрите.</p>
+<p>Минаха година, две – ставаха все по-сигурни те! С чисти усмивки, желания и страст се завърза техният любовен романс.</p>
+<p>Ръка в ръка с безкрайна сила, любовта им вечност е разкрила. Мина лете, мина зима – сред свят и бури, в светлина, Ани и Димитър сбъднаха една мечта.</p>
+
+<h4>10 дек. 2024, Тя каза ДА!</h4>
+<p>На десетата година смелост той събра – във вярност да ѝ се врече с надеждата да чуе: "Завинаги обичам те."</p>
+<p>С копнеж, желание, без страх, със сълзи на очи и с тихички глас, изрече тя думата “ДА” и щастие обзе нейната душа.</p>
+<p>Две съдби високи във вярност се вричат, с пламък негасим, с вечна прегръдка, в обет неделим. Свързани са те – две души, една любов, безкрайни мечти!<br><strong>Ани и Димитър</strong></p>
+
             </div>
         </div>
     </div>
@@ -265,14 +269,20 @@
                         </div>
                         
                         <div class="col-md-12">
-                            <label style="font-weight: bold">2. Моля потвърдете колко души ще дойдете?</label> <br>
+                            <label style="font-weight: bold">
+                                2. Моля, напишете имената на всички гости, които ще присъстват:
+                            </label><br>
                             <div class="form-group">
-                                <div class="form-check form-check-inline" *ngFor="let number of [1, 2, 3, 4, 5, 6]">
-                                    <input class="form-check-input" type="radio" name="guests" [(ngModel)]="guests" [value]="number" id="guest{{ number }}" required>
-                                    <label class="form-check-label" for="guest{{ number }}">{{ number }}</label> 
-                                </div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="guests"
+                                    [(ngModel)]="guests"
+                                    placeholder="Например: Анна Петрова, Димитър Георгиев"
+                                    required>
                             </div>
                         </div>
+                        
                         
                   
                         <div class="col-md-12">
@@ -308,15 +318,15 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                               <small style="font-size: 10px">Призив! 
+                               <small style="font-size: 10px;"><span style="font-size: 15px; font-weight: bold">Призив!</span><br> 
                                 За да допринесете към нашия празник да бъде още по-вълнуваш и приказен не се изисква много освен да носите усмивки и настроение.Ние ще приемем и уважим всеки ваш жест,но ако все пак се чудите с какво да ни дарувате,можете да оставите избора в наши ръце.<br>
                                 
-                                По желание! <br>
+                                <span style="font-size: 15px; font-weight: bold">По желание!</span> <br>
                                 Както младостта,така и късната пролет са изпълнени с жизненост,чистота и цветове,затова ако желаете можете да се впишете в тематиката на нашето празненство като избягвате строгите тоалети и мрачните цветове,а заложите на свежа елегантност и усещане за топлина и стил.<br>
                                 
-                                 Благодарности! <br>
-                                Аз- Ани и Аз-Димитър, ще бъдем изключително щастливи,ако приемете нашата покана! <br>
-                                *Моля потвърдете присъствието си до 20.05!</small>
+                                <span style="font-size: 15px; font-weight: bold">Благодарности! </span> <br>
+                                Аз - Ани и Аз - Димитър, ще бъдем изключително щастливи,ако приемете нашата покана! <br>
+                                <span style="color: red; font-weight: bold">*Моля потвърдете присъствието си до 20.05!</span></small>
                             </div>
                         </div>
                   
