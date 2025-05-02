@@ -14,7 +14,7 @@ import { ActivatedRoute } from "@angular/router";
 export class InvitationComponent implements OnInit {
   userId: string | null = null;
   public attendance: string = "";
-  public guests: number = 2;
+  public guests: string = "";
   public transport: string = "";
   public menu: string = "";
   public hotel: string = "";
@@ -163,7 +163,7 @@ export class InvitationComponent implements OnInit {
   // Reset form fields after submission
   resetForm() {
     this.attendance = "";
-    this.guests = 2;
+    this.guests = "";
     this.transport = "";
     this.menu = "";
     this.hotel = "";
