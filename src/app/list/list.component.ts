@@ -28,11 +28,12 @@ export class ListComponent implements OnInit {
 
   copyInvitationLink(userId: string): void {
     const url = `${window.location.origin}/invitation?userId=${encodeURIComponent(userId)}`;
-    const message = `Здравейте! Изпращам ви поканата за нашата сватба на 15 юни (петък).
-  Официалната покана ще намерите на следния линк:
-  ${url}
+    const message = `Здравейте!
+ С радост искаме да ви поканим на нашата сватба на 15.06.2025г! 
+Официалната покана,както и всички подробности за събитието, ще откриете на следния линк! 
+${url}
   
-  Моля да потвърдите присъствието си до 20.05.25!`;
+Моля да потвърдите присъствието си до 20.05.25!`;
   
     navigator.clipboard.writeText(message)
       .then(() => {
